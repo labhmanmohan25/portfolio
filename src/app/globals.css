@@ -10,15 +10,21 @@
   --light-description: rgb(75, 85, 99);
   --light-paragraph: rgb(107, 114, 128);
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: #0a0a0a;
-      --foreground: #ededed;
+  --winning-bg: #22c55e; /* Green for winning */
+  --losing-bg: #ef4444; /* Red for losing */
+}
 
-      --light-heading: rgb(229 231 235);
-      --light-description: rgb(156 163 175);
-      --light-paragraph: rgb(209 213 219);
-    }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+
+    --light-heading: rgb(229 231 235);
+    --light-description: rgb(156 163 175);
+    --light-paragraph: rgb(209 213 219);
+
+    --winning-bg: #16a34a; /* Darker green for winning */
+    --losing-bg: #dc2626; /* Darker red for losing */
   }
 }
 
