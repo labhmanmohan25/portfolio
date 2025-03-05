@@ -161,7 +161,7 @@ export const achievements = [
 
 function Achievements() {
   return (
-    <section className="mx-10 my-20 w-screen-lg max-w-full">
+    <section className="mx-10 my-20 w-full max-w-screen-lg">
       <h2 className={"mb-20 text-3xl " + ps2p.className}>Achievements</h2>
       <ul className="space-y-14">
         {achievements.map((achievement, index) => (
