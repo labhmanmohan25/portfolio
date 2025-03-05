@@ -39,11 +39,11 @@ export const achievements = [
       },
     ],
     images: [
-      { src: "/assets/gytiaward.jpeg", alt: "Award Certificate" },
-      { src: "/assets/gyticertificate.jpeg", alt: "Receiving the Award" },
-      { src: "/assets/gytigroup.jpeg", alt: "EEG Medical Bed" },
-      { src: "/assets/gytimummy.jpeg", alt: "EEG Medical Bed" },
-      { src: "/assets/gytiposter.jpeg", alt: "EEG Medical Bed" },
+      { src: "./assets/gytiaward.jpeg", alt: "Award Certificate" },
+      { src: "./assets/gyticertificate.jpeg", alt: "Receiving the Award" },
+      { src: "./assets/gytigroup.jpeg", alt: "EEG Medical Bed" },
+      { src: "./assets/gytimummy.jpeg", alt: "EEG Medical Bed" },
+      { src: "./assets/gytiposter.jpeg", alt: "EEG Medical Bed" },
     ],
   },
   {
@@ -58,12 +58,12 @@ export const achievements = [
       },
     ],
     images: [
-      { src: "/assets/patent1.jpg", alt: "Award Certificate" },
-      { src: "/assets/patent2.jpg", alt: "Award Certificate" },
-      { src: "/assets/patent3.jpg", alt: "Award Certificate" },
-      { src: "/assets/patent4.jpg", alt: "Award Certificate" },
-      { src: "/assets/patent5.jpg", alt: "Award Certificate" },
-      { src: "/assets/patent6.jpg", alt: "Award Certificate" },
+      { src: "./assets/patent1.jpg", alt: "Award Certificate" },
+      { src: "./assets/patent2.jpg", alt: "Award Certificate" },
+      { src: "./assets/patent3.jpg", alt: "Award Certificate" },
+      { src: "./assets/patent4.jpg", alt: "Award Certificate" },
+      { src: "./assets/patent5.jpg", alt: "Award Certificate" },
+      { src: "./assets/patent6.jpg", alt: "Award Certificate" },
     ],
   },
   {
@@ -80,79 +80,79 @@ export const achievements = [
     ],
     images: [
       {
-        src: "/assets/burpp_presentation_page-0001.jpg",
+        src: "./assets/burpp_presentation_page-0001.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0002.jpg",
+        src: "./assets/burpp_presentation_page-0002.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0003.jpg",
+        src: "./assets/burpp_presentation_page-0003.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0004.jpg",
+        src: "./assets/burpp_presentation_page-0004.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0005.jpg",
+        src: "./assets/burpp_presentation_page-0005.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0006.jpg",
+        src: "./assets/burpp_presentation_page-0006.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0007.jpg",
+        src: "./assets/burpp_presentation_page-0007.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0008.jpg",
+        src: "./assets/burpp_presentation_page-0008.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0009.jpg",
+        src: "./assets/burpp_presentation_page-0009.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0010.jpg",
+        src: "./assets/burpp_presentation_page-0010.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0011.jpg",
+        src: "./assets/burpp_presentation_page-0011.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0012.jpg",
+        src: "./assets/burpp_presentation_page-0012.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0013.jpg",
+        src: "./assets/burpp_presentation_page-0013.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0014.jpg",
+        src: "./assets/burpp_presentation_page-0014.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0015.jpg",
+        src: "./assets/burpp_presentation_page-0015.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0016.jpg",
+        src: "./assets/burpp_presentation_page-0016.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0017.jpg",
+        src: "./assets/burpp_presentation_page-0017.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0018.jpg",
+        src: "./assets/burpp_presentation_page-0018.jpg",
         alt: "Award Certificate",
       },
       {
-        src: "/assets/burpp_presentation_page-0019.jpg",
+        src: "./assets/burpp_presentation_page-0019.jpg",
         alt: "Award Certificate",
       },
     ],
@@ -161,7 +161,7 @@ export const achievements = [
 
 function Achievements() {
   return (
-    <section className="mx-10 my-20 w-full max-w-screen-lg">
+    <section className="my-20 w-full px-10 max-w-screen-lg">
       <h2 className={"mb-20 text-3xl " + ps2p.className}>Achievements</h2>
       <ul className="space-y-14">
         {achievements.map((achievement, index) => (

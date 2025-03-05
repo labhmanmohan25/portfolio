@@ -7,7 +7,7 @@ const backgroundMusic = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      background_music.current = new Audio("/spectrum_audio.m4a");
+      background_music.current = new Audio("./spectrum_audio.m4a");
     }
 
     return () => {
