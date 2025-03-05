@@ -148,7 +148,7 @@ function HeroSection() {
               "--distance": skill.distance,
             }}
           >
-            <div className="p-4 rounded-full bg-[#0a0a0a] flex items-center justify-center">
+            <div className="p-4 rounded-full bg-[var(--background)] flex items-center justify-center">
               <img
                 src={skill.img}
                 className="size-20 rotate-[5deg] transition-transform duration-200 ease-in-out hover:rotate-0"
@@ -156,7 +156,7 @@ function HeroSection() {
             </div>
 
             <p
-              className={`${inconsolata.className} text-base text-gray-300 leading-relaxed hidden transition-opacity duration-300 group-hover:block`}
+              className={`${inconsolata.className} ml-4 text-base text-[var(--light-description)] leading-relaxed hidden transition-opacity duration-300 group-hover:block overflow-hidden text-ellipsis whitespace-nowrap`}
             >
               <strong>{skill.title}</strong>
             </p>

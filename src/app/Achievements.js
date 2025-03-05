@@ -167,20 +167,20 @@ function Achievements() {
         {achievements.map((achievement, index) => (
           <li key={index}>
             <h2
-              className={`${firaCode.className} text-2xl font-bold text-gray-200 mb-2`}
+              className={`${firaCode.className} text-2xl font-bold text-[var(--light-heading)] mb-2`}
             >
               {achievement.title}
             </h2>
             {achievement.description && (
               <h3
-                className={`${jetBrainsMono.className} text-lg font-semibold text-gray-400 mb-4`}
+                className={`${jetBrainsMono.className} text-lg font-semibold text-[var(--light-description)] mb-4`}
               >
                 {achievement.description}
               </h3>
             )}
             {achievement.details && (
               <p
-                className={`${inconsolata.className} text-base text-gray-300 leading-relaxed`}
+                className={`${inconsolata.className} text-base text-[var(--light-paragraph)] leading-relaxed`}
               >
                 <strong>{achievement.details}</strong>
               </p>

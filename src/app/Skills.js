@@ -45,11 +45,18 @@ function Skills() {
               "h-[350px] w-[230px] border rounded-lg p-4 relative overflow-hidden mb-10 mx-2 " +
               jetBrainsMono.className
             }
+            style={{ borderColor: "var(--foreground)" }}
           >
             <h3>{category}</h3>
-            <div className="absolute bottom-0 right-0 p-3 rounded-tl-lg rounded-br-lg cursor-pointer bg-white text-background transition-all group duration-1000 ease-in-out hover:w-full hover:h-full hover:rounded-lg">
+            <div
+              className="absolute bottom-0 right-0 p-3 rounded-tl-lg rounded-br-lg cursor-pointer transition-all group duration-1000 ease-in-out hover:w-full hover:h-full hover:rounded-lg"
+              style={{
+                backgroundColor: "var(--foreground)",
+                color: "var(--background)",
+              }}
+            >
               <strong>Know More</strong>
-              <div className="hidden text-background items-center justify-center duration-1000 group-hover:block">
+              <div className="hidden items-center justify-center duration-1000 group-hover:block">
                 {skills.map((skill, skillIndex) => (
                   <p key={skillIndex}>{skill}</p>
                 ))}

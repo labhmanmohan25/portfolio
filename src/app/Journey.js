@@ -84,38 +84,54 @@ function calculateDurationInMonths(start, end) {
 }
 
 function Journey() {
+  const romanNumerals = [
+    "I",
+    "II",
+    "III",
+    "IV",
+    "V",
+    "VI",
+    "VII",
+    "VIII",
+    "IX",
+    "X",
+  ];
+
   return (
     <section className="mx-10 my-20 w-full text-center max-w-screen-lg">
       <h2 className={"mb-20 text-3xl " + ps2p.className}>Journey</h2>
 
-      <div className="flex items-center">
+      <div className="flex flex-wrap items-center justify-center">
         {journey.reverse().map((job, index) => {
           const durationInMonths = calculateDurationInMonths(
             job.duration.start,
             job.duration.end
           );
-          const lineWidth = durationInMonths * 10; // Adjust the multiplier as needed
 
           return (
             <React.Fragment key={index}>
-              <div className="flex flex-col items-center">
-                <div className={`${jetBrainsMono.className} text-white mb-2`}>
+              <div className="flex flex-col items-center mb-10 mx-5">
+                <div
+                  className={`${jetBrainsMono.className} text-[var(--foreground)] mb-2`}
+                >
                   {job.title} ({job.duration.start} - {job.duration.end})
                 </div>
-                <div className={`${jetBrainsMono.className} text-white mb-2`}>
+                <div
+                  className={`${jetBrainsMono.className} text-[var(--foreground)] mb-2`}
+                >
                   {job.role}
                 </div>
                 <div
-                  className={`h-8 w-8 rounded-full ${
+                  className={`h-8 w-8 rounded-full flex items-center justify-center ${
                     index === journey.length - 1
-                      ? "bg-green-500 border-2 border-white"
-                      : "bg-white"
+                      ? "bg-green-500 border-2 border-[var(--foreground)]"
+                      : "bg-[var(--foreground)] text-[var(--background)]"
                   }`}
-                ></div>
+                >
+                  {romanNumerals[index]}
+                </div>
               </div>
-              {index < journey.length - 1 && (
-                <hr className="w-10" style={{ width: `${lineWidth}px` }} />
-              )}
+              {index < journey.length - 1 && <div className="h-10"></div>}
             </React.Fragment>
           );
         })}
