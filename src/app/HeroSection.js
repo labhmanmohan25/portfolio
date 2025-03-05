@@ -2,6 +2,7 @@
 import React from "react";
 import { Press_Start_2P, Inconsolata } from "next/font/google";
 import { useMouseRotate } from "./useMouseRotate";
+// import {css} from "../../public/icons/css.png";
 
 const ps2p = Press_Start_2P({ subsets: ["latin"], weight: ["400"] });
 const inconsolata = Inconsolata({ subsets: ["latin"], weight: ["400"] });
@@ -10,7 +11,7 @@ const skills = [
   {
     top: "50%",
     left: "50%",
-    img: "/icons/css.png",
+    img: "../../icons/css.png",
     title: "CSS",
     duration: "5s",
     distance: "-15px",
@@ -18,7 +19,7 @@ const skills = [
   {
     top: "5%",
     left: "78%",
-    img: "/icons/docker.png",
+    img: "../../icons/docker.png",
     title: "Docker",
     duration: "6s",
     distance: "-20px",
@@ -26,7 +27,7 @@ const skills = [
   {
     top: "87%",
     left: "59%",
-    img: "/icons/html.png",
+    img: "../../icons/html.png",
     title: "HTML",
     duration: "7s",
     distance: "-25px",
@@ -34,7 +35,7 @@ const skills = [
   {
     top: "39%",
     left: "66%",
-    img: "/icons/java.png",
+    img: "../../icons/java.png",
     title: "Java",
     duration: "8s",
     distance: "-30px",
@@ -42,7 +43,7 @@ const skills = [
   {
     top: "20%",
     left: "52%",
-    img: "/icons/js.png",
+    img: "../../icons/js.png",
     title: "JavaScript",
     duration: "9s",
     distance: "-35px",
@@ -50,7 +51,7 @@ const skills = [
   {
     top: "10%",
     left: "15%",
-    img: "/icons/mongo.png",
+    img: "../../icons/mongo.png",
     title: "MongoDB",
     duration: "10s",
     distance: "-40px",
@@ -58,7 +59,7 @@ const skills = [
   {
     top: "78%",
     left: "7%",
-    img: "/icons/mysql.png",
+    img: "../../icons/mysql.png",
     title: "MySQL",
     duration: "11s",
     distance: "-45px",
@@ -66,7 +67,7 @@ const skills = [
   {
     top: "65%",
     left: "40%",
-    img: "/icons/node.png",
+    img: "../../icons/node.png",
     title: "Node.js",
     duration: "12s",
     distance: "-50px",
@@ -74,7 +75,7 @@ const skills = [
   {
     top: "69%",
     left: "80%",
-    img: "/icons/python.png",
+    img: "../../icons/python.png",
     title: "Python",
     duration: "13s",
     distance: "-55px",
@@ -82,7 +83,7 @@ const skills = [
   {
     top: "32%",
     left: "10%",
-    img: "/icons/react.png",
+    img: "../../icons/react.png",
     title: "React",
     duration: "14s",
     distance: "-60px",
@@ -90,7 +91,7 @@ const skills = [
   {
     top: "58%",
     left: "14%",
-    img: "/icons/redux.png",
+    img: "../../icons/redux.png",
     title: "Redux",
     duration: "15s",
     distance: "-65px",
