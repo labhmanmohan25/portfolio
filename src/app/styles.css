@@ -1,0 +1,156 @@
+@keyframes spectrumOutline {
+  0% {
+    outline-color: #ff00ff;
+  } /* Fluorescent Pink */
+  25% {
+    outline-color: #00ffff;
+  } /* Fluorescent Cyan */
+  50% {
+    outline-color: #00ff00;
+  } /* Fluorescent Green */
+  75% {
+    outline-color: #ffff00;
+  } /* Fluorescent Yellow */
+  100% {
+    outline-color: #ff00ff;
+  } /* Back to Pink */
+}
+
+@keyframes spectrumTint {
+  0% {
+    background-color: rgba(255, 0, 255, 0.2);
+  } /* Pink */
+  25% {
+    background-color: rgba(0, 255, 255, 0.2);
+  } /* Cyan */
+  50% {
+    background-color: rgba(0, 255, 0, 0.2);
+  } /* Green */
+  75% {
+    background-color: rgba(255, 255, 0, 0.2);
+  } /* Yellow */
+  100% {
+    background-color: rgba(255, 0, 255, 0.2);
+  } /* Back to Pink */
+}
+
+.active-global-style div,
+.active-global-style img,
+.active-global-style p {
+  outline: 3px solid;
+  animation: spectrumOutline 2.5s infinite linear;
+  background-color: transparent !important;
+}
+
+.active-global-style::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  animation: spectrumTint 2.5s infinite linear;
+  pointer-events: none; /* Allows clicks through tint */
+  z-index: 999; /* Keeps tint above everything */
+}
+
+.indicator {
+  position: relative;
+  width: 30px; /* Reduced size */
+  height: 30px; /* Reduced size */
+  transform: rotate(45deg);
+  span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+    animation: animate-arrow 2s linear infinite; /* Slowed down animation */
+    &:nth-child(1) {
+      top: -20px; /* Adjusted for smaller size */
+      left: -20px; /* Adjusted for smaller size */
+      animation-delay: 0s;
+    }
+    &:nth-child(2) {
+      top: -10px; /* Adjusted for smaller size */
+      left: -10px; /* Adjusted for smaller size */
+      animation-delay: 0.4s; /* Adjusted delay for slower animation */
+    }
+    &:nth-child(3) {
+      top: 0;
+      left: 0;
+      animation-delay: 0.8s; /* Adjusted delay for slower animation */
+    }
+    &:nth-child(4) {
+      top: 10px; /* Adjusted for smaller size */
+      left: 10px; /* Adjusted for smaller size */
+      animation-delay: 1.2s; /* Adjusted delay for slower animation */
+    }
+    &:nth-child(5) {
+      top: 20px; /* Adjusted for smaller size */
+      left: 20px; /* Adjusted for smaller size */
+      animation-delay: 1.6s; /* Adjusted delay for slower animation */
+    }
+  }
+}
+
+@keyframes animate-arrow {
+  0% {
+    border-color: #fff;
+    transform: translate(0, 0);
+  }
+  20% {
+    border-color: #fff;
+    transform: translate(10px, 10px); /* Adjusted for smaller size */
+  }
+  20.1%,
+  100% {
+    border-color: #ffd64a;
+  }
+}
+
+.valorent-container {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.valorent-text {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.magic-button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-family: "Press Start 2P", cursive;
+  color: white;
+  background: #ff416c;
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.magic-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.magic-button:active {
+  transform: scale(0.95);
+}
+
+.follow-me {
+  z-index: 20;
+  transform-style: preserve-3d;
+  text-shadow: 0 0 1rem pink;
+}
