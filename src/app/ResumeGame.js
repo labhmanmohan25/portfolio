@@ -95,18 +95,21 @@ function ResumeGame() {
           />
         ))}
       </div>
-      {resumeReady && (
-        <a
-          href="./Manmohan_Labh_CV_Feb_2025.pdf"
-          download="Manmohan_Labh_Resume.pdf"
-          className={
-            "mt-10 p-2 bg-green-500 text-white rounded " +
-            jetBrainsMono.className
-          }
-        >
-          Download Resume
-        </a>
-      )}
+      <div className="mt-10 h-12 flex items-center justify-center">
+        {resumeReady ? (
+          <a
+            href="./Manmohan_Labh_CV_Feb_2025.pdf"
+            download="Manmohan_Labh_Resume.pdf"
+            className={
+              "p-2 bg-green-500 text-white rounded " + jetBrainsMono.className
+            }
+          >
+            Download Resume
+          </a>
+        ) : (
+          <div className="h-12"></div>
+        )}
+      </div>
     </section>
   );
 }

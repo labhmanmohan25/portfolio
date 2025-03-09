@@ -131,7 +131,6 @@ function Journey() {
                   {romanNumerals[index]}
                 </div>
               </div>
-              {index < journey.length - 1 && <div className="h-10"></div>}
             </React.Fragment>
           );
         })}

@@ -154,3 +154,16 @@
   transform-style: preserve-3d;
   text-shadow: 0 0 1rem pink;
 }
+
+@keyframes rotateY {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.rotate-icon {
+  animation: rotateY 3s linear infinite;
+}

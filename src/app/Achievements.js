@@ -12,14 +12,24 @@ import EmblaCarousel from "./carousel/EmblaCarousel";
 const firaCode = Fira_Code({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
+  display: "swap",
 });
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "600"],
+  display: "swap",
 });
-const inconsolata = Inconsolata({ subsets: ["latin"], weight: ["400"] });
+const inconsolata = Inconsolata({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
 
-const ps2p = Press_Start_2P({ subsets: ["latin"], weight: ["400"] });
+const ps2p = Press_Start_2P({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
 
 const OPTIONS = {};
 
@@ -39,11 +49,20 @@ export const achievements = [
       },
     ],
     images: [
-      { src: "./assets/gytiaward.jpeg", alt: "Award Certificate" },
-      { src: "./assets/gyticertificate.jpeg", alt: "Receiving the Award" },
-      { src: "./assets/gytigroup.jpeg", alt: "EEG Medical Bed" },
-      { src: "./assets/gytimummy.jpeg", alt: "EEG Medical Bed" },
-      { src: "./assets/gytiposter.jpeg", alt: "EEG Medical Bed" },
+      { src: "./assets/gytiaward.jpeg", alt: "GYTI Award Certificate" },
+      { src: "./assets/gyticertificate.jpeg", alt: "Receiving the GYTI Award" },
+      {
+        src: "./assets/gytigroup.jpeg",
+        alt: "Group photo with EEG Medical Bed",
+      },
+      {
+        src: "./assets/gytimummy.jpeg",
+        alt: "Demonstration of EEG Medical Bed",
+      },
+      {
+        src: "./assets/gytiposter.jpeg",
+        alt: "Poster presentation of EEG Medical Bed",
+      },
     ],
   },
   {
@@ -58,12 +77,12 @@ export const achievements = [
       },
     ],
     images: [
-      { src: "./assets/patent1.jpg", alt: "Award Certificate" },
-      { src: "./assets/patent2.jpg", alt: "Award Certificate" },
-      { src: "./assets/patent3.jpg", alt: "Award Certificate" },
-      { src: "./assets/patent4.jpg", alt: "Award Certificate" },
-      { src: "./assets/patent5.jpg", alt: "Award Certificate" },
-      { src: "./assets/patent6.jpg", alt: "Award Certificate" },
+      { src: "./assets/patent1.jpg", alt: "Patent Certificate 1" },
+      { src: "./assets/patent2.jpg", alt: "Patent Certificate 2" },
+      { src: "./assets/patent3.jpg", alt: "Patent Certificate 3" },
+      { src: "./assets/patent4.jpg", alt: "Patent Certificate 4" },
+      { src: "./assets/patent5.jpg", alt: "Patent Certificate 5" },
+      { src: "./assets/patent6.jpg", alt: "Patent Certificate 6" },
     ],
   },
   {
@@ -81,79 +100,79 @@ export const achievements = [
     images: [
       {
         src: "./assets/burpp_presentation_page-0001.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 1",
       },
       {
         src: "./assets/burpp_presentation_page-0002.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 2",
       },
       {
         src: "./assets/burpp_presentation_page-0003.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 3",
       },
       {
         src: "./assets/burpp_presentation_page-0004.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 4",
       },
       {
         src: "./assets/burpp_presentation_page-0005.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 5",
       },
       {
         src: "./assets/burpp_presentation_page-0006.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 6",
       },
       {
         src: "./assets/burpp_presentation_page-0007.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 7",
       },
       {
         src: "./assets/burpp_presentation_page-0008.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 8",
       },
       {
         src: "./assets/burpp_presentation_page-0009.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 9",
       },
       {
         src: "./assets/burpp_presentation_page-0010.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 10",
       },
       {
         src: "./assets/burpp_presentation_page-0011.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 11",
       },
       {
         src: "./assets/burpp_presentation_page-0012.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 12",
       },
       {
         src: "./assets/burpp_presentation_page-0013.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 13",
       },
       {
         src: "./assets/burpp_presentation_page-0014.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 14",
       },
       {
         src: "./assets/burpp_presentation_page-0015.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 15",
       },
       {
         src: "./assets/burpp_presentation_page-0016.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 16",
       },
       {
         src: "./assets/burpp_presentation_page-0017.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 17",
       },
       {
         src: "./assets/burpp_presentation_page-0018.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 18",
       },
       {
         src: "./assets/burpp_presentation_page-0019.jpg",
-        alt: "Award Certificate",
+        alt: "Hackathon Presentation Slide 19",
       },
     ],
   },
