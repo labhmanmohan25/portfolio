@@ -117,7 +117,7 @@ function HeroSection() {
   return (
     <div className="flex h-screen w-full justify-center items-center relative">
       <div className={"absolute top-[30%] " + ps2p.className}>
-        Pixels, Code, and Purpose.
+        <div className="text-center px-3">Pixels, Code, and Purpose.</div>
         <div
           ref={rotateRef}
           style={{
@@ -125,7 +125,7 @@ function HeroSection() {
               "perspective(5000px) rotateX(var(--rotateY)) rotateY(var(--rotateX))",
           }}
           className={
-            "absolute text-center mt-20 text-5xl follow-me " + ps2p.className
+            "p-3 absolute text-center mt-20 text-5xl follow-me " + ps2p.className
           }
         >
           Manmohan Labh

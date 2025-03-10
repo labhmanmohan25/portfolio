@@ -33,7 +33,7 @@ function ConnectWithMe() {
               <strong>Where I pretend to be professional</strong>
             </p>
             <a
-              className={`${jetBrainsMono.className} text-sm`}
+              className={`${jetBrainsMono.className} text-sm break-all text-left`}
               href="https://www.linkedin.com/in/manmohanlabh"
               target="_blank"
             >
@@ -53,7 +53,7 @@ function ConnectWithMe() {
               <strong>Where my code sleeps more than I do</strong>
             </p>
             <a
-              className={`${jetBrainsMono.className} text-sm`}
+              className={`${jetBrainsMono.className} text-sm break-all text-left`}
               href=" https://github.com/labhmanmohan25"
               target="_blank"
             >
@@ -73,7 +73,7 @@ function ConnectWithMe() {
               <strong>Where I pretend 'mark as unread' is a to-do list</strong>
             </p>
             <a
-              className={`${jetBrainsMono.className} text-sm`}
+              className={`${jetBrainsMono.className} text-sm break-all text-left`}
               href="mailto:labhmanmohan25@gmail.com"
               target="_blank"
             >
@@ -95,7 +95,7 @@ function ConnectWithMe() {
               </strong>
             </p>
             <a
-              className={`${jetBrainsMono.className} text-sm`}
+              className={`${jetBrainsMono.className} text-sm break-all text-left`}
               href="tel:+919867130540"
               target="_blank"
             >
