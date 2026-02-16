@@ -64,7 +64,7 @@ function SkillPill({ children, highlight = false }) {
       className={
         "inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium sm:text-sm sm:px-3 sm:py-1.5 " +
         (highlight
-          ? "bg-gradient-to-r from-violet-500/20 to-cyan-500/20 border border-violet-400/50 text-violet-200 dark:text-violet-100"
+          ? "bg-gradient-to-r from-violet-500/20 to-cyan-500/20 border border-violet-400/50 text-violet-800 dark:text-violet-100"
           : "border border-[var(--foreground)]/30 bg-[var(--foreground)]/5")
       }
     >
