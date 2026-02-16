@@ -33,3 +33,85 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Animated border for resume / CTA button (AI-style violet–cyan) */
+@keyframes resume-border-flow {
+  0%, 100% {
+    border-color: rgba(139, 92, 246, 0.7);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    border-color: rgba(6, 182, 212, 0.7);
+    box-shadow: 0 0 24px rgba(6, 182, 212, 0.35);
+  }
+}
+
+.resume-cta-wrapper {
+  position: relative;
+  border-radius: 1rem;
+  padding: 3px;
+  border: 2px solid rgba(139, 92, 246, 0.6);
+  animation: resume-border-flow 2.5s ease-in-out infinite;
+}
+
+.resume-cta-wrapper .resume-cta-inner {
+  border-radius: calc(1rem - 2px);
+  background: var(--foreground);
+  padding: 1rem 2rem;
+}
+
+/* Skills section: always show scrollbar when scrollable (not overlay) */
+.skills-scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139, 92, 246, 0.6) rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 999px) {
+  .skills-scroll-container {
+    overflow-x: scroll; /* force scrollbar to always show in scrollable breakpoint */
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .skills-scroll-container {
+    scrollbar-color: rgba(139, 92, 246, 0.7) rgba(255, 255, 255, 0.08);
+  }
+}
+
+.skills-scroll-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.skills-scroll-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .skills-scroll-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+.skills-scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.6);
+  border-radius: 5px;
+}
+
+.skills-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.8);
+}
+
+/* Chevron indicators: only on small/medium when scrollable */
+.skills-scroll-chevron {
+  pointer-events: none;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+.skills-scroll-chevron.visible {
+  opacity: 0.85;
+}
+@media (min-width: 1000px) {
+  .skills-scroll-chevrons {
+    display: none;
+  }
+}

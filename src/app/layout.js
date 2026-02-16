@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Manmohan Labh Portfolio",
-  description: "dev by manmohan labh",
+  description: "SDE 2 Fullstack @ Postman | IIT(ISM) Dhanbad | GYTI Awardee | I-ACE National Winner",
 };
 
 export default function RootLayout({ children }) {

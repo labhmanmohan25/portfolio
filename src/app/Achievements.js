@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import {
   Fira_Code,
@@ -67,7 +69,7 @@ export const achievements = [
   },
   {
     title:
-      "📝 Patent: System and method to control a pneumatic medical bed using EEG signals",
+      "📝 Patent: A system and method to control a pneumatic medical bed through electroencephalography (EEG) signals",
     description:
       "The intent inspiring this invention is to help paralytic/severely affected patients to control the position of their pneumatic bed by the brain through an EEG device. In this invention, the medical bed is powered by a pneumatic cylinder whose movement is controlled by the patient’s brain. Initially, the patient tries to send a ‘Lift-up’ or ‘Lower-down’ signal to adjust the height of the bed in order to calibrate its ‘comfort pose’. Once the comfort pose is apprehended, the pose of the cylinder is recorded in the application programming interface (API) using the feedback signal from the position sensor mounted on top of the pneumatic cylinder. Later, the patient only has to think of the ‘comfort pose’ to align the position of its hospital bed at the desired comfortable position.",
     links: [
@@ -86,7 +88,7 @@ export const achievements = [
     ],
   },
   {
-    title: "👨‍💻 Winner of India - Australia Circular Economy Hackathon",
+    title: "👨‍💻 Winner Student Team of India Australia Circular Economy (I - ACE) Hackathon 2021",
     description:
       "India Australia Circular Economy Hackathon (I-ACE) is jointly being organized by Atal Innovation Mission, NITI Aayog, Government of India and Commonwealth Scientific and Industrial Research Organisation (CSIRO), Australia to enable the students and startups/MSMEs of both the nations in fostering innovative solutions for the development of a circular economy across the food system value chain with the aim of increasing the long-term health and resilience of our planet, through innovative technology solutions. I-ACE aims to accelerate the development of young and promising students and startups/MSMEs working towards the creation of a sustainable future.",
     details:
@@ -179,33 +181,54 @@ export const achievements = [
 ];
 
 function Achievements() {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const hasMore = (a) => a.description || a.details;
+
   return (
-    <section className="my-20 w-full px-10 max-w-screen-lg">
-      <h2 className={"mb-20 text-3xl " + ps2p.className}>Achievements</h2>
-      <ul className="space-y-14">
+    <section className="my-16 w-full px-4 sm:px-6 md:px-10 max-w-screen-lg">
+      <h2 className={"mb-10 text-2xl sm:text-3xl " + ps2p.className}>
+        Achievements
+      </h2>
+      <ul className="space-y-8">
         {achievements.map((achievement, index) => (
           <li key={index}>
             <h2
-              className={`${firaCode.className} text-2xl font-bold text-[var(--light-heading)] mb-2`}
+              className={`${firaCode.className} text-base sm:text-lg font-bold text-[var(--light-heading)] mb-1.5`}
             >
               {achievement.title}
             </h2>
-            {achievement.description && (
-              <h3
-                className={`${jetBrainsMono.className} text-lg font-semibold text-[var(--light-description)] mb-4`}
+            {hasMore(achievement) && (
+              <button
+                type="button"
+                onClick={() =>
+                  setExpandedIndex((i) => (i === index ? null : index))
+                }
+                className={`${jetBrainsMono.className} text-sm font-medium text-[var(--light-description)] hover:underline focus:outline-none focus:ring-2 focus:ring-[var(--light-heading)]/50 rounded px-0 py-1`}
               >
-                {achievement.description}
-              </h3>
+                {expandedIndex === index ? "Show less" : "Know more"}
+              </button>
             )}
-            {achievement.details && (
-              <p
-                className={`${inconsolata.className} text-base text-[var(--light-paragraph)] leading-relaxed`}
-              >
-                <strong>{achievement.details}</strong>
-              </p>
+            {expandedIndex === index && (
+              <div className="mt-2 space-y-2">
+                {achievement.description && (
+                  <p
+                    className={`${jetBrainsMono.className} text-sm sm:text-base font-semibold text-[var(--light-description)] leading-relaxed`}
+                  >
+                    {achievement.description}
+                  </p>
+                )}
+                {achievement.details && (
+                  <p
+                    className={`${inconsolata.className} text-sm text-[var(--light-paragraph)] leading-relaxed`}
+                  >
+                    <strong>{achievement.details}</strong>
+                  </p>
+                )}
+              </div>
             )}
             {achievement.links && (
-              <div className="mt-4">
+              <div className="mt-2">
                 {achievement.links.map((link, linkIndex) => (
                   <React.Fragment key={linkIndex}>
                     <Link
@@ -221,7 +244,7 @@ function Achievements() {
               </div>
             )}
             {achievement.images && (
-              <div className="my-5">
+              <div className="my-3">
                 <EmblaCarousel slides={achievement.images} options={OPTIONS} />
               </div>
             )}

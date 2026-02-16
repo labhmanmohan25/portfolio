@@ -117,7 +117,7 @@ function HeroSection() {
   return (
     <div className="flex h-screen w-full justify-center items-center relative">
       <div className={"absolute top-[30%] " + ps2p.className}>
-        <div className="text-center px-3">Pixels, Code, and Purpose.</div>
+        <div className="text-center px-3">Code that thinks. Systems that matter.</div>
         <div
           ref={rotateRef}
           style={{

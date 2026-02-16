@@ -2,7 +2,6 @@ import React from "react";
 import { Inconsolata, JetBrains_Mono } from "next/font/google";
 import { SlSocialLinkedin, SlSocialGithub, SlPhone } from "react-icons/sl";
 import { CiMail } from "react-icons/ci";
-import "./styles.css"; // Import the CSS file
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -14,92 +13,69 @@ const inconsolata = Inconsolata({
   weight: ["400"],
   display: "swap",
 });
+const links = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/manmohanlabh",
+    icon: SlSocialLinkedin,
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/labhmanmohan25",
+    icon: SlSocialGithub,
+  },
+  {
+    label: "Email",
+    href: "mailto:labhmanmohan25@gmail.com",
+    icon: CiMail,
+    text: "labhmanmohan25@gmail.com",
+  },
+  {
+    label: "Phone",
+    href: "tel:+919867130540",
+    icon: SlPhone,
+    text: "+91 9867 130 540",
+  },
+];
 
-function ConnectWithMe() {
+export default function ConnectWithMe() {
   return (
-    <section className="my-20 w-full px-10 max-w-screen-lg text-center ">
-      <h2 className={"mb-10 text-3xl " + inconsolata.className}>
-        Connect with Me @
-      </h2>
-      <div className="text-[var(--light-description)] grid grid-cols-1 lg:grid-cols-2 gap-2 ">
-        <div className="flex items-center w-100 justify-center lg:justify-start p-3">
-          <div className="border-2 font-bold rounded-full p-2 mr-4 text-[var(--foreground)] bg-[var(--background)] rotate-icon">
-            <SlSocialLinkedin />
-          </div>
-          <div className="flex flex-col items-start w-[350px] lg:w-full">
-            <p
-              className={`${inconsolata.className} text-lg font-semibold text-left`}
-            >
-              <strong>Where I pretend to be professional</strong>
-            </p>
+    <section className="my-20 w-full px-10 max-w-[90rem]">
+      <div className="text-center">
+        <h2 className={"mb-6 text-3xl " + inconsolata.className}>
+          Connect with Me
+        </h2>
+        <div className="text-[var(--light-description)] grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center max-w-4xl mx-auto">
+          {links.map(({ label, href, icon: Icon, text }) => (
             <a
-              className={`${jetBrainsMono.className} text-sm break-all text-left`}
-              href="https://www.linkedin.com/in/manmohanlabh"
-              target="_blank"
+              key={label}
+              href={href}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className={`flex items-center gap-3 p-3 rounded-lg hover:bg-[var(--background)]/50 transition-colors w-full max-w-[350px] min-w-0 ${jetBrainsMono.className} text-sm`}
             >
-              https://www.linkedin.com/in/manmohanlabh
+              <span className="flex-shrink-0 p-2 rounded-full border border-[var(--foreground)]/30 text-[var(--foreground)]">
+                <Icon />
+              </span>
+              <span className="text-left min-w-0 break-all">
+                {text ?? href.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+              </span>
             </a>
-          </div>
+          ))}
         </div>
 
-        <div className="flex items-center w-100 justify-center lg:justify-start p-3">
-          <div className="border-2 font-bold rounded-full p-2 mr-4 text-[var(--foreground)] bg-[var(--background)] rotate-icon">
-            <SlSocialGithub />
-          </div>
-          <div className="flex flex-col items-start w-[350px] lg:w-full">
-            <p
-              className={`${inconsolata.className} text-lg font-semibold text-left`}
-            >
-              <strong>Where my code sleeps more than I do</strong>
-            </p>
+        <div className="flex flex-col items-center mt-14">
+          <div className="resume-cta-wrapper inline-block transition-transform duration-200 hover:scale-105 active:scale-100">
             <a
-              className={`${jetBrainsMono.className} text-sm break-all text-left`}
-              href=" https://github.com/labhmanmohan25"
-              target="_blank"
+              href="./Manmohan_Labh_CV_Feb_2025.pdf"
+              download="Manmohan_Labh_Resume.pdf"
+              className={
+                "resume-cta-inner inline-flex items-center justify-center px-10 py-4 sm:px-12 sm:py-5 text-lg sm:text-xl font-semibold " +
+                "text-[var(--background)] " +
+                jetBrainsMono.className
+              }
             >
-              https://github.com/labhmanmohan25
-            </a>
-          </div>
-        </div>
-
-        <div className="flex items-center w-100 justify-center lg:justify-start p-3">
-          <div className="border-2 font-bold rounded-full p-2 mr-4 text-[var(--foreground)] bg-[var(--background)] rotate-icon">
-            <CiMail />
-          </div>
-          <div className="flex flex-col items-start w-[350px] lg:w-full">
-            <p
-              className={`${inconsolata.className} text-lg font-semibold text-left`}
-            >
-              <strong>Where I pretend 'mark as unread' is a to-do list</strong>
-            </p>
-            <a
-              className={`${jetBrainsMono.className} text-sm break-all text-left`}
-              href="mailto:labhmanmohan25@gmail.com"
-              target="_blank"
-            >
-              labhmanmohan25@gmail.com
-            </a>
-          </div>
-        </div>
-
-        <div className="flex items-center w-100 justify-center lg:justify-start p-3">
-          <div className="border-2 font-bold rounded-full p-2 mr-4 text-[var(--foreground)] bg-[var(--background)] rotate-icon">
-            <SlPhone />
-          </div>
-          <div className="flex flex-col items-start w-[350px] lg:w-full">
-            <p
-              className={`${inconsolata.className} text-lg font-semibold text-left`}
-            >
-              <strong>
-                Where I'm available for offers, memes, and side quests
-              </strong>
-            </p>
-            <a
-              className={`${jetBrainsMono.className} text-sm break-all text-left`}
-              href="tel:+919867130540"
-              target="_blank"
-            >
-              +91 9867 130 540
+              Download my resume
             </a>
           </div>
         </div>
@@ -107,5 +83,3 @@ function ConnectWithMe() {
     </section>
   );
 }
-
-export default ConnectWithMe;

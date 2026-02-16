@@ -113,5 +113,5 @@ function ResumeGame() {
     </section>
   );
 }
-
 export default ResumeGame;
+

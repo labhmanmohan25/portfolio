@@ -1,142 +1,177 @@
-import React from "react";
-import {
-  Fira_Code,
-  JetBrains_Mono,
-  Inconsolata,
-  Press_Start_2P,
-} from "next/font/google";
+"use client";
 
-const firaCode = Fira_Code({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-});
+import React, { useState } from "react";
+import { JetBrains_Mono, Press_Start_2P } from "next/font/google";
+
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "600"],
 });
-const inconsolata = Inconsolata({ subsets: ["latin"], weight: ["400"] });
-
 const ps2p = Press_Start_2P({ subsets: ["latin"], weight: ["400"] });
+
+const MOBILE_PREVIEW_COUNT = 2; // Show first 2 bullets on mobile before "Show more"
 
 const journey = [
   {
+    title: "AI Systems & Applied Intelligence",
+    role: "Independent Research & Builder",
+    duration: { start: "Feb 2026", end: "Present" },
+    experience: [
+      "Deep-diving into cutting-edge AI systems (LLMs, agent frameworks, multimodal models, infra).",
+      "Building small-scale AI tools and automation systems to understand real-world deployment tradeoffs.",
+      "Experimenting with local models, orchestration layers, and API-based LLM integrations.",
+      "Studying inference optimization, model hosting, evaluation, and human-in-the-loop workflows.",
+      "Documenting learnings and prototyping production-oriented AI utilities."
+    ],
+  },
+  {
+    title: "Postman",
+    role: "Software Engineer – Fullstack (Growth & Monetization)",
+    duration: { start: "Apr 2025", end: "Feb 2026" },
+    experience: [
+      "Owned Trials & Monetization flows impacting free-to-paid conversion and revenue growth.",
+      "Led 10 A/B experiments across onboarding and checkout; partnered with Product & Design to optimize funnel performance.",
+      "Unified pricing and checkout systems across 5 product surfaces; reduced fragmentation and improved conversion consistency.",
+      "Migrated org-wide authentication to Okta SSO; strengthened enterprise security and compliance readiness.",
+      "Eliminated 25+ redundant code paths and API calls; improved average load time by ~1.5s."
+    ],
+  },
+  {
     title: "Innovaccer Inc., India",
-    role: "Software Development Engineer 2 Frontend",
-    duration: {
-      start: "06/2024",
-      end: "Present",
-    },
+    role: "Software Development Engineer 2",
+    duration: { start: "Jun 2024", end: "Apr 2025" },
     experience: [
-      "Led the License Manager platform mid-project, consolidating clinical assets, data assets, provider hierarchies, and value-based care contracts. Streamlined operations for 50+ organizations, boosting efficiency and user experience by 30%.",
-      "Designed and implemented the Patient Reference feature, enabling 1,600+ healthcare organizations across the U.S. to securely share patient data within chat on web and laptop applications. Integrated advanced search filters and APIs, cutting data-sharing time by 70%. The feature streamlined workflows, improving communication and accelerating patient care services.",
-      "Strengthened code quality by conducting rigorous testing and debugging, reducing the bug rate by 15%.",
-      "Engineered and maintained three microservices within the Microfrontend architecture using React and a Backend-for-Frontend (BFF) approach, ensuring modular and scalable application development.",
-      "Optimized the codebase by replacing Redux with custom hooks and Context, reducing code size by 25% and decreasing the bug rate by 15%.",
+      "Led the License Manager platform; streamlined operations for 50+ organizations.",
+      "Designed Patient Reference feature for 1,600+ healthcare orgs; cut data-sharing time by 70%.",
+      "Reduced bug rate by 15% through testing and debugging.",
+      "Built and maintained microservices with React and BFF architecture.",
+      "Replaced Redux with custom hooks/Context; reduced code size by 25%.",
     ],
   },
   {
-    title: "I’mbesideyou Inc., Japan",
+    title: "I'mbesideyou Inc., Japan",
     role: "Software Development Engineer 2 Full Stack",
-    duration: {
-      start: "08/2023",
-      end: "06/2024",
-    },
+    duration: { start: "Aug 2023", end: "Jun 2024" },
     experience: [
-      "Architected scalable front-end solutions and seamlessly integrated them with back-end systems, enhancing UI/UX workflows across multiple products.",
-      "Built and optimized front-end and back-end infrastructure using AWS CDK, provisioning databases, VPCs, and S3 buckets, boosting deployment efficiency by 30%.",
-      "Accelerated front-end performance by reducing graph loading time from 1.5 minutes to under 1 second. Integrated ML models and optimized backend systems, increasing overall user engagement by 20%.",
-      "Conducted in-depth Product-Market Fit (PMF) research, driving strategic product and development decisions for both front-end and back-end features.",
+      "Architected front-end solutions and integrated with back-end systems.",
+      "Built AWS CDK infrastructure (DBs, VPCs, S3); improved deployment by 30%.",
+      "Reduced graph loading from 1.5 min to under 1 sec; increased engagement by 20%.",
+      "Drove PMF research for product and development decisions.",
     ],
   },
   {
-    title: "I’mbesideyou Inc., Japan",
+    title: "I'mbesideyou Inc., Japan",
     role: "Software Development Engineer Full Stack",
-    duration: {
-      start: "08/2021",
-      end: "07/2023",
-    },
+    duration: { start: "Aug 2021", end: "Jul 2023" },
     experience: [
-      "Built front-end applications with React.js, leveraging Redux for state management and integrating vis.js for data visualization.",
-      "Integrated third-party APIs, including Zoom, Google Drive, and Google Calendar, using OAuth authentication. Developed a Google Meet extension for seamless collaboration.",
-      "Designed and deployed APIs with AWS API Gateway and Serverless Framework on AWS Lambda, ensuring scalable and efficient backend functionality.",
+      "Built React.js apps with Redux and vis.js for data visualization.",
+      "Integrated Zoom, Google Drive, Calendar via OAuth; built Google Meet extension.",
+      "Designed APIs with AWS API Gateway and Serverless on Lambda.",
     ],
   },
   {
-    title: "I’mbesideyou Inc., Japan",
-    role: "Web Engineer Intern Frontend",
-    duration: {
-      start: "06/2021",
-      end: "07/2021",
-    },
+    title: "I'mbesideyou Inc., Japan",
+    role: "Web Engineer Intern",
+    duration: { start: "May 2021", end: "Jul 2021" },
     experience: [
-      "Analyzed mental health data to uncover insights and trends, driving data-informed decision-making.",
-      "Developed and maintained visualizations using Chart.js and React.js to track evolving trends. Published a Medium post documenting key learnings on leveraging Chart.js for data visualization.",
+      "Analyzed mental health data for insights and trends.",
+      "Built Chart.js + React visualizations; wrote a Medium post on Chart.js.",
     ],
+  },
+  {
+    title: "IIT (ISM), Dhanbad",
+    role: "B.Tech, Mechanical Engineering",
+    duration: { start: "2018", end: "2022" },
+    experience: ["Bachelor of Technology in Mechanical Engineering."],
   },
 ];
 
-function calculateDurationInMonths(start, end) {
-  const startDate = new Date(start);
-  const endDate = end === "Present" ? new Date() : new Date(end);
-  const years = endDate.getFullYear() - startDate.getFullYear();
-  const months = endDate.getMonth() - startDate.getMonth();
-  return years * 12 + months;
-}
-
-function Journey() {
-  const romanNumerals = [
-    "I",
-    "II",
-    "III",
-    "IV",
-    "V",
-    "VI",
-    "VII",
-    "VIII",
-    "IX",
-    "X",
-  ];
+function JourneyCard({ job, isMobile }) {
+  const [expanded, setExpanded] = useState(false);
+  const bullets = job.experience;
+  const hasMore = isMobile && bullets.length > MOBILE_PREVIEW_COUNT;
+  const visibleBullets = hasMore && !expanded
+    ? bullets.slice(0, MOBILE_PREVIEW_COUNT)
+    : bullets;
+  const hiddenCount = bullets.length - MOBILE_PREVIEW_COUNT;
 
   return (
-    <section className="mx-10 my-20 w-full text-center max-w-screen-lg">
-      <h2 className={"mb-20 text-3xl " + ps2p.className}>Journey</h2>
+    <div className="flex gap-4 text-left">
+      {/* Timeline dot + line */}
+      <div className="flex flex-col items-center flex-shrink-0">
+        <div
+          className="w-3 h-3 rounded-full border-2 border-[var(--foreground)] bg-[var(--background)]"
+          aria-hidden
+        />
+        <div className="w-px flex-1 min-h-[1rem] bg-[var(--foreground)] opacity-30" />
+      </div>
 
-      <div className="flex flex-wrap items-center justify-center">
-        {journey.reverse().map((job, index) => {
-          const durationInMonths = calculateDurationInMonths(
-            job.duration.start,
-            job.duration.end
-          );
+      <div className="pb-8 flex-1 min-w-0">
+        <p className={`font-semibold text-[var(--foreground)] ${jetBrainsMono.className}`}>
+          {job.title}
+        </p>
+        <p className={`text-sm text-[var(--foreground)] opacity-90 ${jetBrainsMono.className}`}>
+          {job.role}
+        </p>
+        <p className={`text-xs text-[var(--foreground)] opacity-70 ${jetBrainsMono.className} mt-0.5`}>
+          {job.duration.start} → {job.duration.end}
+        </p>
 
-          return (
-            <React.Fragment key={index}>
-              <div className="flex flex-col items-center mb-10 mx-5">
-                <div
-                  className={`${jetBrainsMono.className} text-[var(--foreground)] mb-2`}
-                >
-                  {job.title} ({job.duration.start} - {job.duration.end})
-                </div>
-                <div
-                  className={`${jetBrainsMono.className} text-[var(--foreground)] mb-2`}
-                >
-                  {job.role}
-                </div>
-                <div
-                  className={`h-8 w-8 rounded-full flex items-center justify-center ${
-                    index === journey.length - 1
-                      ? "bg-green-500 border-2 border-[var(--foreground)]"
-                      : "bg-[var(--foreground)] text-[var(--background)]"
-                  }`}
-                >
-                  {romanNumerals[index]}
-                </div>
-              </div>
-            </React.Fragment>
-          );
-        })}
+        {bullets.length > 0 && (
+          <ul className="mt-3 space-y-1.5 list-disc list-inside text-sm text-[var(--foreground)] opacity-90">
+            {visibleBullets.map((point, i) => (
+              <li key={i}>{point}</li>
+            ))}
+          </ul>
+        )}
+
+        {hasMore && !expanded && (
+          <button
+            type="button"
+            onClick={() => setExpanded(true)}
+            className={`mt-2 text-sm font-medium underline underline-offset-2 ${jetBrainsMono.className} text-[var(--foreground)] opacity-80 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-[var(--foreground)] focus:ring-offset-2 rounded px-1 py-0.5 -ml-1 min-h-[44px] min-w-[44px] inline-flex items-center`}
+            aria-expanded="false"
+          >
+            Show {hiddenCount} more
+          </button>
+        )}
+        {hasMore && expanded && (
+          <button
+            type="button"
+            onClick={() => setExpanded(false)}
+            className={`mt-2 text-sm font-medium underline underline-offset-2 ${jetBrainsMono.className} text-[var(--foreground)] opacity-80 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-[var(--foreground)] focus:ring-offset-2 rounded px-1 py-0.5 -ml-1 min-h-[44px] min-w-[44px] inline-flex items-center`}
+            aria-expanded="true"
+          >
+            Show less
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default function Journey() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  React.useEffect(() => {
+    const mq = window.matchMedia("(max-width: 1023px)");
+    const set = () => setIsMobile(mq.matches);
+    set();
+    mq.addEventListener("change", set);
+    return () => mq.removeEventListener("change", set);
+  }, []);
+
+  return (
+    <section className="my-16 sm:my-20 w-full px-4 sm:px-6 md:px-10 max-w-screen-lg" aria-labelledby="journey-heading">
+      <h2 id="journey-heading" className={"mb-10 text-2xl sm:text-3xl " + ps2p.className}>
+        Journey
+      </h2>
+
+      <div className="relative max-w-4xl">
+        {journey.map((job, index) => (
+          <JourneyCard key={index} job={job} isMobile={isMobile} />
+        ))}
       </div>
     </section>
   );
 }
-
-export default Journey;
